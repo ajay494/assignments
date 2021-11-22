@@ -1,0 +1,268 @@
+Q2-A
+ackage com.springcore2;
+import java.util.List;
+import java.util.Set;
+import java.util.Map;
+
+
+public class Collection {
+	private List<String> QuestionId;
+	private Set<String> Questions;
+	private Map<Integer, String> Answers;
+	public List<String> getQuestionId() {
+		return QuestionId;
+	}
+	public void setQuestionId(List<String> questionId) {
+		QuestionId = questionId;
+	}
+	public Set<String> getQuestions() {
+		return Questions;
+	}
+	public void setQuestions(Set<String> questions) {
+		Questions = questions;
+	}
+	public Map<Integer, String> getAnswers() {
+		return Answers;
+	}
+	public void setAnswers(Map<Integer, String> answers) {
+		Answers = answers;
+	}
+	public Collection() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "Collection [QuestionId=" + QuestionId + ", Questions=" + Questions + ", Answers=" + Answers + "]";
+	}
+	
+	
+	
+}
+-------------------------------------------------
+MAIN
+package com.springcore2;
+
+import org.springframework.context.ApplicationContext;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class testcollection 
+{
+    public static void main( String[] args )
+    {
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/springcore2/config1.xml");
+        Collection collectionmap = (Collection) context.getBean("collectionmap");
+        
+        System.out.println(collectionmap.getQuestionId());
+        System.out.println(collectionmap.getQuestions());
+        System.out.println(collectionmap.getAnswers());
+        
+    }
+}
+----------------------------------------------
+CONFIG
+ <bean name = "collectionmap" class="com.springcore2.Collection">
+     <property name="QuestionId">
+     <list>
+                <value>1</value>
+               
+     </list>
+     </property>
+     
+     <property name="Questions">
+     <set>
+           <value>Why to use Java collection? </value>
+          
+     
+     </set>
+     </property>
+     
+     <property name="Answers">
+         <map>
+            <entry key="1"  value="Reducing the effort required to write the code by providing useful data structures and algorithms"/>
+             <entry  key="2" value="Java collections provide high-performance and high-quality data structures and algorithms thereby increasing the speed and quality"/>       
+         </map>     
+     </property>
+     
+     </bean>
+     
+     
+     
+    </beans>
+---------------------------------------------------------------------------
+Q2B
+package com.springcoreC2;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class Collection2 {
+	private Set<String> QuestionId;
+	private Map<String, String> Questions;
+	private List< String> Answers;
+	public Set<String> getQuestionId() {
+		return QuestionId;
+	}
+	public void setQuestionId(Set<String> questionId) {
+		QuestionId = questionId;
+	}
+	public Map<String, String> getQuestions() {
+		return Questions;
+	}
+	public void setQuestions(Map<String, String> questions) {
+		Questions = questions;
+	}
+	public List<String> getAnswers() {
+		return Answers;
+	}
+	public void setAnswers(List<String> answers) {
+		Answers = answers;
+	}
+	@Override
+	public String toString() {
+		return "Collection2 [QuestionId=" + QuestionId + ", Questions=" + Questions + ", Answers=" + Answers + "]";
+	}
+
+}
+
+------------------------------------------------------------
+MAIN
+
+package com.springcoreC2;
+
+import org.springframework.context.ApplicationContext;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class testcollection2 {
+	public static void main( String[] args )
+    {
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/springcoreC2/config2.xml");
+        Collection2 collectionlist = (Collection2) context.getBean("collectionlist");
+        
+        System.out.println(collectionlist.getQuestionId());
+        System.out.println(collectionlist.getQuestions());
+        System.out.println(collectionlist.getAnswers());
+
+}
+
+}
+------------------------------------
+CONFIG
+<bean name = "collectionlist" class="com.springcoreC2.Collection2">
+     <property name="QuestionId">
+     <set>
+                <value>1</value>
+               
+     </set>
+     </property>
+     
+     <property name="Questions">
+     <map>
+<entry key="question on java"  value="What is OOP?"/>
+             
+     
+     </map>
+     </property>
+     
+     <property name="Answers">
+         <list>
+         <value>OOP stands for Object-Oriented Programming.Procedural programming is about writing procedures or methods that perform operations on the data, while object-oriented programming is about creating objects that contain both data and methods.</value>
+                 </list>     
+     </property>
+     
+     </bean>
+     
+     
+     
+    </beans>
+-------------------------------------------
+Q2-C
+package com.springcoreC3;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class Collection3 {
+	private List<String> QuestionId;
+	private Map<Integer,String> Questions;
+	private Set<String> Answers;
+	public List<String> getQuestionId() {
+		return QuestionId;
+	}
+	public void setQuestionId(List<String> questionId) {
+		QuestionId = questionId;
+	}
+	public Map<Integer, String> getQuestions() {
+		return Questions;
+	}
+	public void setQuestions(Map<Integer, String> questions) {
+		Questions = questions;
+	}
+	public Set<String> getAnswers() {
+		return Answers;
+	}
+	public void setAnswers(Set<String> answers) {
+		Answers = answers;
+	}
+	public Collection3() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+}
+-------------------------------------------------
+MAIN
+package com.springcoreC3;
+import org.springframework.context.ApplicationContext;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class testcollection3 {
+	public static void main( String[] args )
+    {
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/springcoreC3/Config3.xml");
+        Collection3 set = (Collection3) context.getBean("set");
+        
+        System.out.println(set.getQuestionId());
+        System.out.println(set.getQuestions());
+        System.out.println(set.getAnswers());
+
+
+}
+}
+------------------------------
+CONFIG
+<bean name = "set" class="com.springcoreC3.Collection3">
+     <property name="QuestionId">
+     <list>
+                <value>1</value>
+               
+     </list>
+     </property>
+     
+     <property name="Questions">
+     <map>
+<entry key="1234"  value="What is OOP?"/>
+             
+     
+     </map>
+     </property>
+     
+     <property name="Answers">
+         <set>
+         <value>OOP stands for Object-Oriented Programming.Procedural programming is about writing procedures or methods that perform operations on the data, while object-oriented programming is about creating objects that contain both data and methods.</value>
+                 </set>     
+     </property>
+     
+     </bean>
+     
+     
+     
+    </beans>
+-------------------------------------------------------
